@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #E53E3E; /* Elegant Crimson Red */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Darker Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --font-handwriting: "Caveat", cursive;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+}
+
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Custom text outline utility for bold aesthetics */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.15);
+  color: transparent;
+}
+.text-outline:hover {
+  color: #111;
+  transition: all 0.3s ease;
+}
