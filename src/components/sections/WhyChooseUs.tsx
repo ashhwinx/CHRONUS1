@@ -165,18 +165,14 @@ export default function WhyChooseUs() {
 
   return (
     <section ref={containerRef} id="why-choose" className="relative h-[300dvh] w-full" style={{ backgroundColor: "#faebe8" }}>
-      {/* 
-        FIX: Yahan se Tailwind ki `bg-[#faebe8]` aur `transition-colors` class hata di hai.
-        Ab sirf GSAP isko smoothly handle karega bina kisi jhatke ke.
-      */}
       <div className="bg-transition-layer sticky top-0 w-full h-[100dvh] overflow-hidden flex flex-col items-center justify-center">
         
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-0">
-          <h2 className="title-word text-[12vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.85] tracking-tighter drop-shadow-sm" style={{ color: "#D83688" }}>WHY</h2>
-          <h2 className="title-word text-[12vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.85] tracking-tighter drop-shadow-sm" style={{ color: "#D83688" }}>CHOOSE</h2>
-          <h2 className="title-word text-[12vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.85] tracking-tighter drop-shadow-sm relative mt-2 md:mt-0" style={{ color: "#D83688" }}>
+          {/* FIX: Mobile pe text bada (text-[16vw]) aur spacing normal (tracking-normal). Desktop pe same purana (md:text-[10vw], md:tracking-tighter) */}
+          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm" style={{ color: "#D83688" }}>WHY</h2>
+          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm" style={{ color: "#D83688" }}>CHOOSE</h2>
+          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm relative mt-2 md:mt-0" style={{ color: "#D83688" }}>
             CHRONUS
-           
           </h2>
         </div>
 
@@ -185,7 +181,7 @@ export default function WhyChooseUs() {
                {features.map((item, i) => (
                  <div 
                     key={i} 
-                    className="choose-card bg-[#0D522C] rounded-2xl md:rounded-[2rem] p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-2xl relative border-2 border-transparent hover:border-white/20 transition-colors will-change-transform aspect-[3/4] lg:aspect-auto"
+                    className="choose-card bg-[#00522d] rounded-2xl md:rounded-[2rem] p-4 sm:p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-2xl relative border-2 border-transparent hover:border-white/20 transition-colors will-change-transform aspect-[3/4] lg:aspect-auto"
                  >
                    <div className="text-white drop-shadow-md">
                      {item.icon}

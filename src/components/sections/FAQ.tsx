@@ -11,9 +11,7 @@ const faqs = [
   { q: "What specific services do you offer?", a: "Social media management, content creation, and global digital strategy." },
   { q: "What results can be expected?", a: "Increased engagement, brand awareness, and genuine conversions." },
   { q: "How long does a typical project take?", a: "Depending on the scope, strategy phases take 2-4 weeks, while full execution is ongoing." },
-  { q: "Do you offer custom content packages?", a: "Yes, every brand is unique. We tailor our photography and video production to your specific needs." },
-  { q: "Can you manage our ads as well?", a: "Absolutely. We handle paid amplification to ensure your content reaches the right audience." },
-  { q: "How do we get started with Agence Chronus?", a: "Just drop us a message! We'll start with a discovery call to audit your current presence." }
+  { q: "Do you offer custom content packages?", a: "Yes, every brand is unique. We tailor our photography and video production to your specific needs." }
 ];
 
 export default function FAQ() {
@@ -64,22 +62,31 @@ export default function FAQ() {
       ref={containerRef} 
       id="faq" 
       className="relative w-full transition-colors duration-0"
-      /* FIX: Yahan inline style add kiya hai taaki initially ye Pink rahe, Black na dikhe! */
       style={{ backgroundColor: "#DE318A" }} 
     >
       <div className="max-w-[1400px] mx-auto w-full flex flex-col lg:flex-row items-start px-6 md:px-12 lg:px-0">
         
         {/* --- Left Side: Sticky Typography --- */}
         <div className="w-full lg:w-[35%] lg:sticky lg:top-0 lg:h-[100dvh] flex flex-col justify-center pt-24 lg:pt-0 z-20">
-            <h2 className="text-[16vw] sm:text-6xl md:text-[4rem] lg:text-[5rem] xl:text-[5rem] leading-[0.95] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-normal" style={{ letterSpacing: "0.02em" }}>
-                <span className="color-sync block drop-shadow-sm mb-2 lg:mb-2">SMALL</span>
-                <span className="color-sync block drop-shadow-sm mb-4 lg:mb-6">QUESTIONS,</span>
-                <span className="color-sync block drop-shadow-sm">BIG ANSWERS.</span>
+            {/* FIX: Mobile pe text-[11.5vw] kiya hai taaki 'SMALL QUESTIONS' ek line m aa jaye */}
+            <h2 className="text-[11.5vw] sm:text-6xl md:text-[4rem] lg:text-[5rem] xl:text-[5rem] leading-[0.95] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-normal" style={{ letterSpacing: "0.02em" }}>
+                
+                {/* Mobile mein 2 lines (SMALL QUESTIONS, | BIG ANSWERS.), Desktop pe 3 lines */}
+                <span className="color-sync block drop-shadow-sm mb-1 lg:mb-2">
+                  SMALL <span className="md:hidden">QUESTIONS,</span>
+                </span>
+                
+                <span className="color-sync hidden md:block drop-shadow-sm mb-4 lg:mb-6">
+                  QUESTIONS,
+                </span>
+                
+                <span className="color-sync block drop-shadow-sm mt-1 md:mt-0">
+                  BIG ANSWERS.
+                </span>
             </h2>
             
             {/* Bottom Indicator */}
-            <div className="about-anim-line absolute bottom-8 left-6 md:bottom-12 md:left-4 lg:left-3 flex items-center gap-4 pointer-events-auto z-20 group cursor-pointer">
-              {/* Glowing Pulse Dot */}
+            <div className="about-anim-line hidden md:flex absolute bottom-8 left-6 md:bottom-12 md:left-4 lg:left-3 items-center gap-4 pointer-events-auto z-20 group cursor-pointer">
               <div className="relative flex h-3 w-3 items-center justify-center">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#db3c8a] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#db3c8a]"></span>
@@ -89,7 +96,6 @@ export default function FAQ() {
                 FAQ
               </span>
               
-              {/* Sleek Line */}
               <div className="w-12 h-[2px] bg-black group-hover:w-20 group-hover:bg-[#db3c8a] transition-all duration-500"></div>
             </div>
         </div>

@@ -52,33 +52,54 @@ export default function HeroAbout() {
        .set([".img-1", ".img-3"], { autoAlpha: 0 }, 1);
 
        // --- Scroll Timeline 2: About Section & 4th Image Book Flip --- //
-       gsap.set(".img-4", { rotationZ: -10, y: "100%", scale: 0.9, opacity: 0 });
+       let mm = gsap.matchMedia();
 
-       gsap.timeline({
-         scrollTrigger: {
-           trigger: ".about-section",
-           start: "top 80%",
-           end: "center center",
-           scrub: 1,
-         }
-       })
-       .to(".img-4", { opacity: 1, duration: 0.1 }, 0) 
-       .to(".img-4", { rotationZ: 0, y: "0%", scale: 1, duration: 1.2, ease: "power2.out" }, 0)
-       .fromTo(".about-left", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8 }, 0.2)
-       .fromTo(".about-right", { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8 }, 0.2);
+       // 💻 DESKTOP ONLY: Image flip animation + text slide
+       mm.add("(min-width: 768px)", () => {
+         gsap.set(".img-4", { rotationZ: -10, y: "100%", scale: 0.9, opacity: 0, display: "block" });
 
+         gsap.timeline({
+           scrollTrigger: {
+             trigger: ".about-section",
+             start: "top 80%",
+             end: "center center",
+             scrub: 1,
+           }
+         })
+         .to(".img-4", { opacity: 1, duration: 0.1 }, 0) 
+         .to(".img-4", { rotationZ: 0, y: "0%", scale: 1, duration: 1.2, ease: "power2.out" }, 0)
+         .fromTo(".about-left", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8 }, 0.2)
+         .fromTo(".about-right", { x: 50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8 }, 0.2);
+       });
+
+       // 📱 MOBILE ONLY: Text slide only, img-4 hidden
+       mm.add("(max-width: 767px)", () => {
+         gsap.set(".img-4", { opacity: 0, display: "none" }); 
+         
+         gsap.timeline({
+           scrollTrigger: {
+             trigger: ".about-section",
+             start: "top 80%",
+             end: "center center",
+             scrub: 1,
+           }
+         })
+         .fromTo(".about-left", { x: -20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8 }, 0.2)
+         .fromTo(".about-right", { x: 20, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8 }, 0.2);
+       });
+
+       // --- Scroll Timeline 3: Projects --- //
        const pCards = gsap.utils.toArray(".project-card");
        const numCards = pCards.length;
        
        const offset = window.innerWidth > 768 ? window.innerWidth * 0.45 : window.innerWidth * 0.6;
        const gap = window.innerWidth > 768 ? window.innerWidth * 0.35 : window.innerWidth * 0.6;
 
-       gsap.set(pCards, { x: (i) => offset + i * gap, y: 0, rotationZ: 0, opacity: 1 });
+       gsap.set(pCards, { x: (i: any) => offset + i * gap, y: 0, rotationZ: 0, opacity: 1 });
        gsap.set(".projects-left", { x: -50, opacity: 0 });
        gsap.set(".reveal-text-line", { y: 60, opacity: 0, rotationX: -45 });
        gsap.set(".reveal-rect", { clipPath: "circle(0% at 50% 50%)" });
        
-
        gsap.set(".bg-transition", { backgroundColor: "#2885ba" }); 
 
        gsap.timeline({
@@ -103,7 +124,6 @@ export default function HeroAbout() {
        
        const bgColors = ["#171717", "#b4bdc6", "#444325", "#e59c01", "#f29ebd"];
        
-       // Fixed loop: Single loop correctly handling animation
        for (let s = 0; s < numCards; s++) {
            const label = "step" + s;
            projTl.add(label);
@@ -117,15 +137,12 @@ export default function HeroAbout() {
                const title = card.querySelector('.card-title-anim');
 
                if (i === s) {
-                   // Active Card -> Center mein (No shadow required, clean look)
                    projTl.to(card, { x: 0, duration: 2, ease: "power3.inOut" }, label);
                    if(title) projTl.to(title, { y: "20vh", scale: 1.15, duration: 2, ease: "power3.inOut" }, label);
                    
                } else if (i < s) {
-                   // Piche wale cards -> Wahi rahenge
-                   
+                   // Queue
                } else if (i > s) {
-                   // Queue Cards -> Wait kar rahe hain
                    projTl.to(card, { x: offset + (i - s - 1) * gap, duration: 2, ease: "power3.inOut" }, label);
                    if(title) projTl.to(title, { y: "0vh", scale: 1, duration: 2, ease: "power3.inOut" }, label);
                } 
@@ -147,11 +164,10 @@ export default function HeroAbout() {
       
       <div className="bg-transition fixed inset-0 bg-neutral-950 pointer-events-none z-0 opacity-0"></div>
 
-      {/* Sticky Images Container */}
-      <div className="sticky top-0 h-[100dvh] w-full flex items-center justify-center pointer-events-none z-10" style={{ perspective: "1500px" }}>
-        <div className="img-container relative w-[60vw] md:w-[25vw] aspect-[2/3] max-w-[320px] pointer-events-auto mt-[4vh] md:mt-0" style={{ transformStyle: "preserve-3d" }}>
+      {/* FIX: 'relative md:sticky' taaki mobile par image follow na kare */}
+      <div className="relative md:sticky top-0 h-[100dvh] w-full flex items-center justify-center pointer-events-none z-10" style={{ perspective: "1500px" }}>
+        <div className="img-container relative w-[60vw] md:w-[25vw] aspect-[2/3] max-w-[320px] pointer-events-auto mb-[14vh] md:mt-24" style={{ transformStyle: "preserve-3d" }}>
 
-             {/* Hata di 'shadow-2xl' taaki overlap ka chance na rahe */}
              <div className="img-4 absolute inset-0 w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden z-[40] bg-neutral-200 border border-black/5">
                  <img src="https://images.unsplash.com/photo-1574015974293-817f0ebebb74?q=80&w=800&auto=format&fit=crop" alt="Abstract fashion" className="w-full h-full object-cover" />
                  <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent mix-blend-overlay"></div>
