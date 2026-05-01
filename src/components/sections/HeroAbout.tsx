@@ -169,17 +169,17 @@ export default function HeroAbout() {
         <div className="img-container relative w-[60vw] md:w-[25vw] aspect-[2/3] max-w-[320px] pointer-events-auto mb-[14vh] md:mt-24" style={{ transformStyle: "preserve-3d" }}>
 
              <div className="img-4 absolute inset-0 w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden z-[40] bg-neutral-200 border border-black/5">
-                 <img src="https://images.unsplash.com/photo-1574015974293-817f0ebebb74?q=80&w=800&auto=format&fit=crop" alt="Abstract fashion" className="w-full h-full object-cover" />
+                 <img src="https://images.unsplash.com/photo-1681949103006-70066fb25dfe?q=80&w=800&auto=format&fit=crop" alt="Abstract fashion" className="w-full h-full object-cover" />
                  <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent mix-blend-overlay"></div>
              </div>
              <div className="img-2 absolute inset-0 w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden z-30 bg-neutral-200 border border-black/5">
-                 <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop" alt="Blue shoes" className="w-full h-full object-cover" />
+                 <img src="https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?q=80&w=800&auto=format&fit=crop" alt="Blue shoes" className="w-full h-full object-cover" />
              </div>
              <div className="img-3 absolute inset-0 w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden z-20 bg-neutral-200 border border-black/5">
-                 <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Portrait model" className="w-full h-full object-cover" />
+                 <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop" alt="Portrait model" className="w-full h-full object-cover" />
              </div>
              <div className="img-1 absolute inset-0 w-full h-full rounded-2xl md:rounded-[2rem] overflow-hidden z-10 bg-neutral-200 border border-black/5">
-                 <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop" alt="Fashion model" className="w-full h-full object-cover" />
+                 <img src="https://images.unsplash.com/photo-1534961165765-5c9795af911b?q=80&w=800&auto=format&fit=crop" alt="Fashion model" className="w-full h-full object-cover" />
              </div>
          </div>
       </div>

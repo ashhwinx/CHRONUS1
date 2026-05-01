@@ -5,7 +5,7 @@ export const projectsData = [
   { title: "Neon Pulse", client: "TechWear Apparel", category: "Campaign", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop", bgColor: "#171717" },
   { title: "Sonic Waves", client: "AudioFi Electronics", category: "Social Strategy", img: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop", bgColor: "#0f172a" },
   { title: "Urban Drift", client: "Metro Automotive", category: "Content Creation", img: "https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=800&auto=format&fit=crop", bgColor: "#1c1917" },
-  { title: "Quantum Leap", client: "Future Tech", category: "Rebranding", img: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&auto=format&fit=crop", bgColor: "#18181b" },
+  { title: "Quantum Leap", client: "Future Tech", category: "Rebranding", img: "https://images.unsplash.com/photo-1633113214698-485cdb2f56fd?q=80&w=800&auto=format&fit=crop", bgColor: "#18181b" },
   // Last card mein img ki zaroorat nahi hai
   { title: "Explore More", client: "View All Projects", category: "Archive", img: "", bgColor: "#050505", isMore: true }
 ];
