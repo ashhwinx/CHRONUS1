@@ -75,7 +75,7 @@ export default function Experts() {
         {/* --- Left Side: Bold Typography --- */}
         <div className="w-full lg:w-[28%] flex-shrink-0 flex flex-col items-center text-center lg:items-start lg:text-left z-40 relative">
           
-          <div className="flex flex-col font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.85] lg:leading-[0.8]">
+          <div className="flex flex-col font-['Anton',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.85] lg:leading-[0.8]">
              {/* FIX: Size reduced for mobile (text-4xl), kept large for desktop (lg:text-[4.5rem]) */}
              <span className="text-[#D83688] text-4xl sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] drop-shadow-sm font-black ">
                REASONING<br/>TO BETTER:
@@ -112,7 +112,7 @@ export default function Experts() {
 
           {/* MOBILE ONLY: Dynamic Title & Tags directly below the image */}
           <div className="lg:hidden mt-6 flex flex-col items-center text-center min-h-[120px] w-full">
-             <h3 className="text-3xl sm:text-4xl font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-tighter text-[#D83688] drop-shadow-sm transition-opacity duration-300 mb-3">
+             <h3 className="text-3xl sm:text-4xl font-['Anton',_Arial_Black,_sans-serif] uppercase tracking-tighter text-[#D83688] drop-shadow-sm transition-opacity duration-300 mb-3">
                {expertises[activeIndex].title}
              </h3>
              {/* FIX: Tags map return kar diye mobile view mein */}
@@ -137,7 +137,7 @@ export default function Experts() {
                 className={`flex flex-col group cursor-pointer border-b border-white/40 py-5 first:pt-0 last:border-0`} 
                 onClick={() => setActiveIndex(i)}
               >
-                <h3 className={`text-3xl xl:text-4xl font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-tighter transition-colors duration-300 ${isActive ? 'text-[#D83688]' : 'text-[#f9f2ed]'}`}>
+                <h3 className={`text-3xl xl:text-4xl font-['Anton',_Arial_Black,_sans-serif] uppercase tracking-tighter transition-colors duration-300 ${isActive ? 'text-[#D83688]' : 'text-[#f9f2ed]'}`}>
                   {item.title}
                 </h3>
                 

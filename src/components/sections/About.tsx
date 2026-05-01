@@ -76,7 +76,7 @@ export default function About() {
       {/* --- Left Column: TEXT --- */}
       {/* FIX: Gap kam kiya hai aur text tightly pack kiya hai */}
       <div className="w-full md:w-[45%] lg:w-[45%] flex flex-col items-center text-center md:items-start md:text-left about-left pointer-events-auto order-1 md:order-1 pt-16 md:pt-0 z-10 relative">
-        <div className="flex flex-col font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.85] overflow-hidden w-full items-center md:items-start">
+        <div className="flex flex-col font-['Anton',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.85] overflow-hidden w-full items-center md:items-start">
            <span className="about-anim-line text-[#db3c8a] text-[13vw] sm:text-6xl md:text-[4.5rem] lg:text-[5.5rem] drop-shadow-sm font-black pb-0 md:pb-1">
              WE <br /> ELECTRIFY
            </span>

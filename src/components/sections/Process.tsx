@@ -101,7 +101,7 @@ export default function Process() {
         
         {/* --- Left Side: Typography (DESKTOP) --- */}
         <div className="w-full lg:w-[28%] flex-shrink-0 flex-col z-40 hidden lg:flex relative">
-            <div className="flex flex-col font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.9]">
+            <div className="flex flex-col font-['Anton',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.9]">
               <span className="text-[#db3c8a] lg:text-[4rem] xl:text-[4.5rem] drop-shadow-sm font-black pb-1">WE WILL</span>
               <span className="text-[#f0a8c4] lg:text-[4rem] xl:text-[4.5rem] drop-shadow-sm font-black relative z-10">ALWAYS</span>
               <span className="text-[#db3c8a] lg:text-[4rem] xl:text-[4.5rem] drop-shadow-sm font-black">PREFER</span>
@@ -113,7 +113,7 @@ export default function Process() {
 
         {/* --- Mobile Top Section: Centered Headings + Description --- */}
         <div className="w-full flex-shrink-0 flex flex-col items-center text-center z-40 lg:hidden px-4 relative mt-2">
-            <div className="flex flex-col font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.95] w-full items-center">
+            <div className="flex flex-col font-['Anton',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.95] w-full items-center">
               <div className="flex items-center gap-2">
                  <span className="text-[#db3c8a] text-[10vw] sm:text-5xl drop-shadow-sm font-black">WE WILL</span>
                  <span className="text-[#f0a8c4] text-[10vw] sm:text-5xl drop-shadow-sm font-black relative z-10">ALWAYS</span>
@@ -144,9 +144,9 @@ export default function Process() {
                 className={`method-card relative lg:absolute top-0 left-0 w-[72vw] max-w-[300px] lg:w-full h-[48vh] lg:h-full flex-shrink-0 snap-center rounded-[2.5rem] overflow-hidden shadow-xl p-6 lg:p-8 flex flex-col justify-between items-center text-center text-white ${step.bg}`}
                 style={{ willChange: "transform" }}
               >
-                <h3 className="text-3xl lg:text-4xl font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-tight mt-2 lg:mt-4 drop-shadow-sm">{step.title}</h3>
+                <h3 className="text-3xl lg:text-4xl font-['Anton',_Arial_Black,_sans-serif] uppercase tracking-tight mt-2 lg:mt-4 drop-shadow-sm">{step.title}</h3>
                 
-                <div className="text-[9rem] sm:text-[10rem] lg:text-[12rem] xl:text-[14rem] leading-none font-['Impact',_Arial_Black,_sans-serif] tracking-tighter drop-shadow-md">
+                <div className="text-[9rem] sm:text-[10rem] lg:text-[12rem] xl:text-[14rem] leading-none font-['Anton',_Arial_Black,_sans-serif] tracking-tighter drop-shadow-md">
                   {step.number}
                 </div>
 

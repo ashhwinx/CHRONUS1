@@ -36,7 +36,7 @@ export default function Footer() {
           
           {/* Left Side: Colorful CTA */}
           <div className="flex flex-col">
-            <h2 className="text-5xl md:text-7xl lg:text-[6.5rem] font-['Impact',_Arial_Black,_sans-serif] text-gray-900 leading-[0.85] uppercase tracking-tighter mb-4">
+            <h2 className="text-5xl md:text-7xl lg:text-[6.5rem] font-['Anton',_Arial_Black,_sans-serif] text-gray-900 leading-[0.85] uppercase tracking-tighter mb-4">
               READY TO <br />
               <span className="bg-gradient-to-r from-[#D83688] via-[#8B5CF6] to-[#06B6D4] text-transparent bg-clip-text font-serif italic lowercase font-normal tracking-normal pr-2">
                 dominate?
@@ -48,7 +48,7 @@ export default function Footer() {
             
             <a 
               href="mailto:hello@chronus.agency" 
-              className="group flex items-center gap-3 text-2xl md:text-4xl font-['Impact',_Arial_Black,_sans-serif] text-[#D83688] uppercase hover:text-[#8B5CF6] transition-colors w-fit tracking-tighter"
+              className="group flex items-center gap-3 text-2xl md:text-4xl font-['Anton',_Arial_Black,_sans-serif] text-[#D83688] uppercase hover:text-[#8B5CF6] transition-colors w-fit tracking-tighter"
             >
               contact@webier
               <div className="bg-[#D83688]/10 text-[#D83688] p-2 md:p-3 rounded-full group-hover:bg-[#8B5CF6]/10 group-hover:text-[#8B5CF6] transition-all group-hover:translate-x-2">
@@ -95,7 +95,7 @@ export default function Footer() {
       {/* --- Massive CHRONUS Base --- */}
       {/* Yeh text ekdum base par giant size mein hoga aur light gray color mein watermark jaisa dikhega */}
       <div className="w-full flex justify-center items-end mt-[-2%] pointer-events-none select-none">
-        <h2 className="text-[20vw] text-[#00522d] leading-[0.75] font-['Impact',_Arial_Black,_sans-serif] font-black  uppercase tracking-tighter text-center">
+        <h2 className="text-[20vw] text-[#00522d] leading-[0.75] font-['Anton',_Arial_Black,_sans-serif] font-black  uppercase tracking-tighter text-center">
           CHRONUS
         </h2>
       </div>

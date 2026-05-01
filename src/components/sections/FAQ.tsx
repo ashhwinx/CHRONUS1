@@ -69,7 +69,7 @@ export default function FAQ() {
         {/* --- Left Side: Sticky Typography --- */}
         <div className="w-full lg:w-[35%] lg:sticky lg:top-0 lg:h-[100dvh] flex flex-col justify-center pt-24 lg:pt-0 z-20">
             {/* FIX: Mobile pe text-[11.5vw] kiya hai taaki 'SMALL QUESTIONS' ek line m aa jaye */}
-            <h2 className="text-[11.5vw] sm:text-6xl md:text-[4rem] lg:text-[5rem] xl:text-[5rem] leading-[0.95] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-normal" style={{ letterSpacing: "0.02em" }}>
+            <h2 className="text-[11.5vw] sm:text-6xl md:text-[4rem] lg:text-[5rem] xl:text-[5rem] leading-[0.95] font-black font-['Antont',_Arial_Black,_sans-serif] uppercase tracking-normal" style={{ letterSpacing: "0.02em" }}>
                 
                 {/* Mobile mein 2 lines (SMALL QUESTIONS, | BIG ANSWERS.), Desktop pe 3 lines */}
                 <span className="color-sync block drop-shadow-sm mb-1 lg:mb-2">
@@ -110,7 +110,7 @@ export default function FAQ() {
                   onClick={() => setOpenIndex(isOpen ? null : index)} 
                   className="w-full flex items-center justify-between text-left gap-6 group"
                 >
-                  <h3 className={`text-xl sm:text-2xl md:text-[2rem] font-['Impact',_Arial_Black,_sans-serif] tracking-normal uppercase transition-colors duration-300 w-[85%] leading-[1.1]`} style={{ letterSpacing: "0.01em" }}>
+                  <h3 className={`text-xl sm:text-2xl md:text-[2rem] font-['Anton',_Arial_Black,_sans-serif] tracking-normal uppercase transition-colors duration-300 w-[85%] leading-[1.1]`} style={{ letterSpacing: "0.01em" }}>
                     {faq.q}
                   </h3>
                   

@@ -68,64 +68,63 @@ export default function WhyChooseUs() {
     let ctx = gsap.context(() => {
       
       const processSection = document.getElementById("process");
-      
-      // Dono elements jinka color nude se pink hona hai
       const bgElements = [processSection, ".bg-transition-layer", containerRef.current];
 
-      // 1. Initial State: GSAP ko batana padega ki start kahan se karna hai
+      // Sabse pehle default color set kar diya
       gsap.set(bgElements, { backgroundColor: "#faebe8" });
 
-      // ==========================================
-      // PERFECT SMOOTH MERGE (FADE EFFECT)
-      // ==========================================
-      gsap.to(bgElements, {
-        backgroundColor: "#DE318A", // Target Pink
-        ease: "none",               // IMPORTANT: Isse color change ekdum smooth hota hai
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 50%", 
-          end: "top top",   
-          scrub: true,
-          immediateRender: false,   // IMPORTANT: GSAP conflicts ko rokne ke liye
-        }
-      });
+      let mm = gsap.matchMedia();
 
-      // ==========================================
-      // TEXT COLOR FIX
-      // ==========================================
-      if (processSection) {
-        const pinkElements = processSection.querySelectorAll('[class*="text-[#D83688]"], [class*="border-[#D83688]"]');
+      // 💻 DESKTOP ONLY: Background & Text color change animation
+      mm.add("(min-width: 1024px)", () => {
         
-        if (pinkElements.length > 0) {
-          gsap.to(pinkElements, {
-            color: "#ffffff",
-            borderColor: "#ffffff",
-            ease: "none",
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: "top 50%", 
-              end: "top top",   
-              scrub: true,
-              immediateRender: false,
-            }
-          });
-        }
-      }
+        // Background ko pink karna
+        gsap.to(bgElements, {
+          backgroundColor: "#DE318A", 
+          ease: "none",               
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 50%", 
+            end: "top top",   
+            scrub: true,
+          }
+        });
 
-      gsap.to(".title-word", {
-        color: "#ffffff",
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 50%", 
-          end: "top top",   
-          scrub: true,
-          immediateRender: false,
+        // "WHY CHOOSE CHRONUS" text ko white karna
+        gsap.to(".title-word", {
+          color: "#ffffff",
+          ease: "none",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 50%", 
+            end: "top top",   
+            scrub: true,
+          }
+        });
+
+        // Pichle section (Process) ke text ko white karna
+        if (processSection) {
+          const pinkElements = processSection.querySelectorAll('[class*="text-[#D83688]"], [class*="border-[#D83688]"], [class*="text-[#db3c8a]"]');
+          
+          if (pinkElements.length > 0) {
+            gsap.to(pinkElements, {
+              color: "#ffffff",
+              borderColor: "#ffffff",
+              ease: "none",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top 50%", 
+                end: "top top",   
+                scrub: true,
+              }
+            });
+          }
         }
       });
+      // 📱 MOBILE KE LIYE KOI COLOR CHANGE NAHI, default '#faebe8' hi rahega!
 
       // ==========================================
-      // Timeline for Cards & Text Dimming
+      // Timeline for Cards & Text Dimming (Ye dono me chalega)
       // ==========================================
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -145,7 +144,7 @@ export default function WhyChooseUs() {
 
       const cards = gsap.utils.toArray(".choose-card");
       
-      gsap.set(cards, { y: window.innerHeight * 1.5, rotationZ: 0 });
+      gsap.set(cards, { y: "150vh", rotationZ: 0 });
 
       cards.forEach((card, i) => {
         const finalRotation = i % 2 === 0 ? -3 : 3; 
@@ -164,14 +163,13 @@ export default function WhyChooseUs() {
   }, []);
 
   return (
-    <section ref={containerRef} id="why-choose" className="relative h-[300dvh] w-full" style={{ backgroundColor: "#faebe8" }}>
-      <div className="bg-transition-layer sticky top-0 w-full h-[100dvh] overflow-hidden flex flex-col items-center justify-center">
+    <section ref={containerRef} id="why-choose" className="relative h-[300vh] w-full" style={{ backgroundColor: "#faebe8" }}>
+      <div className="bg-transition-layer sticky top-0 w-full h-[100vh] overflow-hidden flex flex-col items-center justify-center" style={{ backgroundColor: "#faebe8" }}>
         
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none z-0">
-          {/* FIX: Mobile pe text bada (text-[16vw]) aur spacing normal (tracking-normal). Desktop pe same purana (md:text-[10vw], md:tracking-tighter) */}
-          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm" style={{ color: "#D83688" }}>WHY</h2>
-          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm" style={{ color: "#D83688" }}>CHOOSE</h2>
-          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Impact',_Arial_Black,_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm relative mt-2 md:mt-0" style={{ color: "#D83688" }}>
+          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Anton',_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm" style={{ color: "#D83688" }}>WHY</h2>
+          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Anton',_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm" style={{ color: "#D83688" }}>CHOOSE</h2>
+          <h2 className="title-word text-[16vw] md:text-[10vw] font-black font-['Anton',_sans-serif] uppercase leading-[0.9] md:leading-[0.85] tracking-normal md:tracking-tighter drop-shadow-sm relative mt-2 md:mt-0" style={{ color: "#D83688" }}>
             CHRONUS
           </h2>
         </div>
@@ -186,7 +184,7 @@ export default function WhyChooseUs() {
                    <div className="text-white drop-shadow-md">
                      {item.icon}
                    </div>
-                   <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-['Impact',_Arial_Black,_sans-serif] text-white uppercase drop-shadow-md leading-[0.9] mb-3 md:mb-5">
+                   <h3 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-['Anton',_sans-serif] text-white uppercase drop-shadow-md leading-[0.9] mb-3 md:mb-5">
                      {item.title}
                    </h3>
                    <p className="text-white/95 font-bold font-sans text-[10px] sm:text-xs md:text-sm lg:text-[15px] leading-tight md:leading-snug max-w-[90%]">

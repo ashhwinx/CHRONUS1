@@ -92,8 +92,10 @@ export default function HeroAbout() {
        const pCards = gsap.utils.toArray(".project-card");
        const numCards = pCards.length;
        
-       const offset = window.innerWidth > 768 ? window.innerWidth * 0.45 : window.innerWidth * 0.6;
-       const gap = window.innerWidth > 768 ? window.innerWidth * 0.35 : window.innerWidth * 0.6;
+       // STRICT FIX: Mobile ke liye gap aur offset yahan exactly calculate honge taaki cards na chipkein
+       const isMobile = window.innerWidth <= 768;
+       const offset = isMobile ? window.innerWidth * 0.95 : window.innerWidth * 0.45;
+       const gap = isMobile ? window.innerWidth * 0.95 : window.innerWidth * 0.35;
 
        gsap.set(pCards, { x: (i: any) => offset + i * gap, y: 0, rotationZ: 0, opacity: 1 });
        gsap.set(".projects-left", { x: -50, opacity: 0 });
