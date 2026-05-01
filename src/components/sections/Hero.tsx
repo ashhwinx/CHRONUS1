@@ -40,11 +40,12 @@ export default function Hero() {
 
           {/* Left Text: HUMAN SOCIAL CLUB */}
           {/* Mobile: Centered, Image ke niche | Desktop: Left aligned */}
-          <div className="hero-bottom-left flex flex-col font-['Impact',_Arial_Black,_sans-serif] uppercase tracking-tighter leading-[0.85] items-center text-center md:items-start md:text-left z-20 w-full md:w-auto relative mb-30 md:mb-0">
-            <span className="text-[#d1cfe4] text-xs md:text-sm tracking-widest mb-3 font-sans font-bold">Social media agency</span>
-            <span className="text-[#db3c8a] text-5xl md:text-7xl drop-shadow-sm font-black">HUMAN</span>
-            <span className="text-[#f29ebd] text-5xl md:text-7xl drop-shadow-sm font-black">SOCIAL CLUB</span>
-          </div>
+          {/* Left Text: HUMAN SOCIAL CLUB */}
+<div className="hero-bottom-left flex flex-col font-['Anton',_sans-serif] uppercase tracking-wider leading-[0.9] items-center text-center md:items-start md:text-left z-20 w-full md:w-auto relative mb-30 md:mb-0">
+  <span className="text-[#d1cfe4] text-xs md:text-sm tracking-widest mb-3 font-sans font-bold">Social media agency</span>
+  <span className="text-[#db3c8a] text-5xl md:text-7xl drop-shadow-sm font-black">HUMAN</span>
+  <span className="text-[#f29ebd] text-5xl md:text-7xl drop-shadow-sm font-black">SOCIAL CLUB</span>
+</div>
 
           {/* Right Text: Crafting Culture */}
           {/* Mobile: Absolute Bottom Right | Desktop: Normal relative flow */}
